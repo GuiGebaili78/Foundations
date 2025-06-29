@@ -6,7 +6,7 @@ import database from "../../../../infra/database";
 export default async function migrations(request, response) {
     const dbClient = await database.getNewClient();
 
-    // Usa process.cwd() para pegar o caminho absoluto da raiz do projeto
+    // // Usa process.cwd() para pegar o caminho absoluto da raiz do projeto
     const migrationsDir = join(process.cwd(), "infra", "migrations");
 
 
@@ -19,7 +19,7 @@ export default async function migrations(request, response) {
         dir: migrationsDir,
         direction: "up",
         verbose: true,
-        migrationsTable: "pgmigrations",
+        migrationsTable: "pgmigrationsfundations",
     };
 
     if (request.method === "GET") {
