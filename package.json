@@ -11,8 +11,9 @@
     "lint:fix": "prettier --write .",
     "teste": "jest --runInBand",
     "teste:watch": "jest --watchAll --runInBand",
-    "migration:create": "node-pg-migrate -m infra/migrations create",
-    "migration:up": "dotenv -e .env.development -- node-pg-migrate -m infra/migrations up"
+    "migration:create": "node-pg-migrate -m infra/migrations create --migrations-table pgmigrationsFundations",
+    "migration:up": "dotenv -e .env.development -- node-pg-migrate -m infra/migrations up --migrations-table pgmigrationsFundations",
+    "migration:down": "dotenv -e .env.development -- node-pg-migrate -m infra/migrations down --migrations-table pgmigrationsFundations"
   },
   "dependencies": {
     "dotenv": "^17.0.0",

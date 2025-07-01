@@ -1,4 +1,4 @@
-import migrationRunner from "node-pg-migrate"
+import migrationRunner from "node-pg-migrate";
 import { join } from "node:path";
 import database from "infra/database.js";
 
@@ -14,7 +14,7 @@ export default async function migrations(request, response) {
     dir: join("infra", "migrations"),
     direction: "up",
     verbose: true,
-    migrationsTable: "pgmigrations",
+    migrationsTable: "pgmigrationsFundations",
   };
 
   if (request.method === "GET") {
